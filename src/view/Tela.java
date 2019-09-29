@@ -1,5 +1,6 @@
 package view;
 
+import java.awt.Color;
 import java.awt.FlowLayout;
 
 import javax.swing.JButton;
@@ -11,7 +12,7 @@ public class Tela extends JFrame{
 	
 	private JTextField tfLogin, tfSenha;
 	private JLabel lblLogin, lblSenha;
-	private JButton btnOK;
+	private JButton btnOK, btnCadastrar;
 	
 	public Tela() {
 		super("Login");
@@ -27,12 +28,14 @@ public class Tela extends JFrame{
 		lblSenha = new JLabel("Senha:");
 		
 		btnOK = new JButton("OK");
+		btnCadastrar = new JButton("Cadastrar Usuário");
 		
 		add(lblLogin);
 		add(tfLogin);
 		add(lblSenha);
 		add(tfSenha);
 		add(btnOK);
+		add(btnCadastrar);
 		
 		setVisible(true);
 	}
@@ -47,5 +50,9 @@ public class Tela extends JFrame{
 
 	public JButton getBtnOK() {
 		return btnOK;
+	}
+
+	public JButton getBtnCadastrar() {
+		return btnCadastrar;
 	}
 }

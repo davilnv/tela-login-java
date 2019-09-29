@@ -13,12 +13,20 @@ public class BaseDeDados {
 		return usuarios.add(usuario);
 	}
 	
-	public boolean buscar(String login, String senha) {
+	public boolean buscarUsuario(String login, String senha) {
 		for (Usuario user : usuarios) {
 			if (login.equalsIgnoreCase(user.getLogin()) && senha.equals(user.getSenha()))
 				return true;
 		}
 		return false;
+	}
+	
+	public Usuario isUsuario(String login, String senha) {
+		for (Usuario user : usuarios) {
+			if (login.equals(user.getLogin()))
+				return user;
+		}
+		return null;
 	}
 
 	public static ArrayList<Usuario> getUsuarios() {

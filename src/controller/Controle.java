@@ -11,6 +11,7 @@ import view.Tela;
 public class Controle implements ActionListener{
 	private Tela tela;
 	private BaseDeDados baseDeDados;
+	private boolean teste;
 	
 	public Controle(Tela tela, BaseDeDados baseDeDados) {
 		this.tela = tela;
@@ -21,9 +22,9 @@ public class Controle implements ActionListener{
 
 	@Override
 	public void actionPerformed(ActionEvent e) {
-		if (baseDeDados.buscar(tela.getTfLogin().getText(), tela.getTfSenha().getText()))
-			JOptionPane.showMessageDialog(null, "Logado com Sucesso!");
-		else
-			JOptionPane.showMessageDialog(null, "Não logado, login ou senha incorreto");
+		if (baseDeDados.buscarUsuario(tela.getTfLogin().getText(), tela.getTfSenha().getText())) {	
+			JOptionPane.showMessageDialog(null, "Usuário logado com Sucesso!");
+		} else
+			JOptionPane.showMessageDialog(null, "Usuário não logado, login ou senha incorreto");
 	}
 }
